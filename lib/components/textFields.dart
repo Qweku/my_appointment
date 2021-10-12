@@ -1,0 +1,123 @@
+// ignore_for_file: file_names, prefer_const_constructors
+import 'package:datetime_picker_formfield/datetime_picker_formfield.dart';
+import 'package:intl/intl.dart';
+import 'package:flutter/material.dart';
+
+class DateTextField extends StatelessWidget {
+  const DateTextField({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    final fromDate = TextEditingController();
+    final dateformat = DateFormat("yyyy-MM-dd");
+    final theme = Theme.of(context);
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 0,),
+      child: Container(
+        width: MediaQuery.of(context).size.width,
+        
+        decoration: BoxDecoration(
+            border: Border.all(
+              color: Colors.black,
+            ),
+            borderRadius: BorderRadius.circular(20)),
+        child: Theme(
+          data: ThemeData.from(
+            colorScheme: ColorScheme.fromSwatch(
+              primarySwatch: Colors.green,
+              accentColor: Colors.white,
+            ),
+          ),
+          child: DateTimeField(
+            style:
+                theme.textTheme.bodyText1,
+            decoration: InputDecoration(
+              hintText: "Date",
+              prefixIcon: Icon(Icons.calendar_today, color:Colors.black),
+              border: InputBorder.none,
+              hintStyle: theme.textTheme.bodyText1,
+              focusedBorder: InputBorder.none,
+              enabledBorder: InputBorder.none,
+              errorBorder: InputBorder.none,
+              disabledBorder: InputBorder.none,
+              contentPadding:
+                  EdgeInsets.symmetric(horizontal: 15, vertical: 15.0),
+            ),
+            // validator: MultiValidator([
+            //   RequiredValidator(
+            //       errorText: "*field cannot be empty"),
+            // ]),
+            format: dateformat,
+            controller: fromDate,
+            onShowPicker: (context, currentValue) {
+              return showDatePicker(
+                  context: context,
+                  firstDate: DateTime(1900),
+                  initialDate: currentValue ?? DateTime.now(),
+                  lastDate: DateTime(2100));
+            },
+          ),
+        ),
+      ),
+    );
+  }
+}
+
+class TimeTextField extends StatelessWidget {
+  const TimeTextField({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    final timeformat = DateFormat("HH:mm");
+    final theme = Theme.of(context);
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 0),
+      child: Container(
+        width: MediaQuery.of(context).size.width,
+        
+        decoration: BoxDecoration(
+            border: Border.all(
+              color: Colors.black,
+            ),
+            borderRadius: BorderRadius.circular(20)),
+        child: Theme(
+          data: ThemeData.from(
+            colorScheme: ColorScheme.fromSwatch(
+              primarySwatch: Colors.green,
+              accentColor: Colors.white,
+            ),
+          ),
+          child: DateTimeField(
+            style: theme.textTheme.bodyText1,
+            decoration: InputDecoration(
+              hintText: "Time",
+              prefixIcon: Icon(Icons.watch, color: Colors.black),
+              border: InputBorder.none,
+              hintStyle: theme.textTheme.bodyText1,
+              focusedBorder: InputBorder.none,
+              enabledBorder: InputBorder.none,
+              errorBorder: InputBorder.none,
+              disabledBorder: InputBorder.none,
+              contentPadding:
+                  EdgeInsets.symmetric(horizontal: 15, vertical: 15.0),
+            ),
+            // validator: MultiValidator([
+            //   RequiredValidator(
+            //       errorText: "*field cannot be empty"),
+            // ]),
+            format: timeformat,
+            //controller: fromDate,
+            onShowPicker: (context, currentValue) async {
+              final time = await showTimePicker(
+                context: context,
+                initialTime:
+                    TimeOfDay.fromDateTime(currentValue ?? DateTime.now()),
+              );
+              return DateTimeField.convert(time);
+            },
+          ),
+        ),
+      ),
+    );
+  }
+}
