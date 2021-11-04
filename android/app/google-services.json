@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "551024259035",
+    "project_id": "my-appointment-c2167",
+    "storage_bucket": "my-appointment-c2167.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:551024259035:android:38c8c0312b0b7f56a681fe",
+        "android_client_info": {
+          "package_name": "com.qweku.my_appointment"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "551024259035-561a8tcqd74k3j4gk5itgn0lb50hd4cm.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD45uyf4g4oLdx5wgosvugGPhxSKMOFaYw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "551024259035-561a8tcqd74k3j4gk5itgn0lb50hd4cm.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
