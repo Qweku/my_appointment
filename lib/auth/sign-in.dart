@@ -24,7 +24,7 @@ class _SignInState extends State<SignIn> {
   final AuthService _auth = AuthService();
   late TextEditingController _emailController;
   late TextEditingController _passwordController;
- bool _obsure = true;
+  bool _obsure = true;
 
   IconData _visibility = Icons.visibility_off;
 
@@ -116,20 +116,47 @@ class _SignInState extends State<SignIn> {
                                   buttonText: "Login",
                                   color: theme.primaryColor,
                                   onTap: () async {
-                                    await loginProvider.login(
-                                        _emailController.text.trim(),
-                                        _passwordController.text.trim());
+                                    if (_emailController.text.isEmpty ||
+                                        _emailController.text.length < 4) {
+                                      ScaffoldMessenger.of(context).showSnackBar(
+                                         SnackBar(
+                                            backgroundColor:
+                                                theme.primaryColorDark,
+                                            content: Text('Invalid email',textAlign:TextAlign.center,
+                                                style: theme.textTheme.bodyText2),
+                                            duration:
+                                                Duration(milliseconds: 1500),
+                                                 behavior:SnackBarBehavior.floating,
+                                                shape: StadiumBorder()),
+                                      );
 
-                                    // dynamic result = await _auth.signInAnon();
-                                    // if (result == null) {
-                                    //   print('Error, signing in');
-                                    // } else {
-                                    //   Navigator.push(
-                                    //       context,
-                                    //       MaterialPageRoute(
-                                    //           builder: (context) => HomeScreen()));
-                                    //   print(result);
-                                    // }
+                                      return null;
+                                    }else
+                                    if (_passwordController.text.isEmpty ||
+                                        _passwordController.text.length < 4) {
+                                      ScaffoldMessenger.of(context)
+                                          .showSnackBar(
+                                        SnackBar(
+                                            backgroundColor:
+                                                theme.primaryColorDark,
+                                            content: Text(
+                                                'Password must be at least 4 characters',textAlign:TextAlign.center,
+                                                style:
+                                                    theme.textTheme.bodyText2),
+                                            duration:
+                                                Duration(milliseconds: 1500),
+                                                behavior:SnackBarBehavior.floating,
+                                                shape: StadiumBorder()
+                                                ),
+                                      );
+
+                                      return null;
+                                    } 
+                                    else {
+                                      await loginProvider.login(
+                                          _emailController.text.trim(),
+                                          _passwordController.text.trim());
+                                    }
                                   },
                                 )
                         ],

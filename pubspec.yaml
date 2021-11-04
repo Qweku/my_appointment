@@ -41,6 +41,7 @@ dependencies:
   firebase_auth:
   firebase_core:
   cloud_firestore:
+  #toast:
   provider:
 
 dev_dependencies:
