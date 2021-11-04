@@ -4,9 +4,11 @@ import 'package:flutter/material.dart';
 import 'package:my_appointment/components/cardSlider.dart';
 import 'package:my_appointment/components/categories.dart';
 import 'package:my_appointment/utils.dart/settings.dart';
+import 'package:provider/provider.dart';
 
 import 'auth/sign-in.dart';
 import 'components/appointmentList.dart';
+import 'services/authservices.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({Key? key}) : super(key: key);
@@ -19,11 +21,12 @@ class _HomeScreenState extends State<HomeScreen> {
   bool showList = false;
   @override
   Widget build(BuildContext context) {
+    final loginProvider = Provider.of<AuthService>(context);
     final theme = Theme.of(context);
     double height = MediaQuery.of(context).size.height;
     double width = MediaQuery.of(context).size.width;
     return WillPopScope(
-      onWillPop: () async => _onBackPressed(context)  ,
+      onWillPop: () async => _onBackPressed(context),
       child: Scaffold(
           backgroundColor: theme.primaryColor,
           appBar: AppBar(
@@ -64,6 +67,9 @@ class _HomeScreenState extends State<HomeScreen> {
                   leading: Icon(Icons.person, color: Colors.black),
                   title: Text('Profile', style: theme.textTheme.bodyText1)),
               ListTile(
+                  onTap: () {
+                    loginProvider.logout();
+                  },
                   leading: Icon(Icons.logout, color: Colors.black),
                   title: Text('Log out', style: theme.textTheme.bodyText1)),
             ],
@@ -118,21 +124,24 @@ class _HomeScreenState extends State<HomeScreen> {
 
   Future<bool> _onBackPressed(BuildContext context) async {
     return (await showDialog<bool>(
-          context: context,
-          builder: (c) => AlertDialog(
-                title: Text("Warning"),
-                content: Text("Do you really want to exit?"),
-                actions: [
-                  TextButton(
-                      onPressed: () {
-                       Navigator.push(context,
-                        MaterialPageRoute(builder: (context) => SignIn()));
-                      },
-                      child: Text("Yes")),
-                  TextButton(
-                      onPressed: () => Navigator.pop(c, false),
-                      child: Text("No"))
-                ],
-              ))) ?? false;
+            context: context,
+            builder: (c) => AlertDialog(
+                  title: Text("Warning"),
+                  content: Text("Do you really want to exit?"),
+                  actions: [
+                    TextButton(
+                        onPressed: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => SignIn()));
+                        },
+                        child: Text("Yes")),
+                    TextButton(
+                        onPressed: () => Navigator.pop(c, false),
+                        child: Text("No"))
+                  ],
+                ))) ??
+        false;
   }
 }

@@ -15,14 +15,26 @@ class Authenticate extends StatefulWidget {
 }
 
 class _AuthenticateState extends State<Authenticate> {
+  bool isToggle = false;
+  void toggleScreen() {
+    setState(() {
+      isToggle = !isToggle;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
-    return SignIn();
+    if (isToggle) {
+      return Register(toggleScreen: toggleScreen);
+    } else {
+      return SignIn(toggleScreen: toggleScreen);
+    }
   }
 }
 
 class Register extends StatefulWidget {
-  const Register({Key? key}) : super(key: key);
+  final Function? toggleScreen;
+  const Register({Key? key, this.toggleScreen}) : super(key: key);
 
   @override
   _RegisterState createState() => _RegisterState();
@@ -50,17 +62,12 @@ class _RegisterState extends State<Register> {
         backgroundColor: theme.primaryColor,
         body: Stack(
           children: [
-            Container(
-              alignment:Alignment(0,-0.6),
-              child: Text('REGISTER',textAlign:TextAlign.center,
-              style:theme.textTheme.headline2!.copyWith(fontSize:50)),
-            ),
             
             Center(
                 child: Container(
                     padding: EdgeInsets.all(20),
                     width: width * 0.8,
-                    height: height * 0.45,
+                    height: height * 0.6,
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(20),
                       color: Colors.white.withOpacity(0.4),
@@ -68,6 +75,10 @@ class _RegisterState extends State<Register> {
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
+                        Text('REGISTER',
+                    textAlign: TextAlign.center,
+                    style: theme.textTheme.headline2!.copyWith(fontSize: 40)),
+                          SizedBox(height:20),
                         CustomTextField(
                           controller: _emailController,
                           hintText: 'Enter email',
@@ -92,9 +103,7 @@ class _RegisterState extends State<Register> {
                               child: Text("Login",
                                   style: theme.textTheme.bodyText2!
                                       .copyWith(color: theme.primaryColorDark)),
-                              onPressed: () {
-                                Navigator.pop(context);
-                              })
+                              onPressed: () => widget.toggleScreen!())
                         ]),
                         SizedBox(height: height * 0.1),
                         loginProvider.isLoading

@@ -13,7 +13,8 @@ import 'package:provider/provider.dart';
 import 'authenticate.dart';
 
 class SignIn extends StatefulWidget {
-  const SignIn({Key? key}) : super(key: key);
+  final Function? toggleScreen; 
+  const SignIn({Key? key,this.toggleScreen}) : super(key: key);
 
   @override
   _SignInState createState() => _SignInState();
@@ -44,17 +45,11 @@ class _SignInState extends State<SignIn> {
           backgroundColor: theme.primaryColor,
           body: Stack(
             children: [
-              Container(
-                alignment: Alignment(0, -0.6),
-                child: Text('LOGIN',
-                    textAlign: TextAlign.center,
-                    style: theme.textTheme.headline2!.copyWith(fontSize: 50)),
-              ),
-              Center(
+               Center(
                   child: Container(
                       padding: EdgeInsets.all(20),
                       width: width * 0.8,
-                      height: height * 0.45,
+                      height: height * 0.6,
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(20),
                         color: Colors.white.withOpacity(0.4),
@@ -62,9 +57,13 @@ class _SignInState extends State<SignIn> {
                       child: Column(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
+                          Text('LOGIN',
+                    textAlign: TextAlign.center,
+                    style: theme.textTheme.headline2!.copyWith(fontSize: 40)),
+                          SizedBox(height:20),
                           CustomTextField(
                             controller: _emailController,
-                            hintText: 'Username',
+                            hintText: 'Email',
                             color: Colors.white,
                             keyboard: TextInputType.emailAddress,
                             style: theme.textTheme.bodyText1,
@@ -86,12 +85,7 @@ class _SignInState extends State<SignIn> {
                                 child: Text("Register",
                                     style: theme.textTheme.bodyText2!.copyWith(
                                         color: theme.primaryColorDark)),
-                                onPressed: () {
-                                  Navigator.push(
-                                      context,
-                                      MaterialPageRoute(
-                                          builder: (context) => Register()));
-                                })
+                                onPressed: () => widget.toggleScreen!())
                           ]),
                           SizedBox(height: height * 0.1),
                           loginProvider.isLoading
