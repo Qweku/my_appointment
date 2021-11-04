@@ -44,6 +44,8 @@ class _RegisterState extends State<Register> {
   final AuthService _auth = AuthService();
   late TextEditingController _emailController;
   late TextEditingController _passwordController;
+  bool _obsure = true;
+  IconData _visibility = Icons.visibility_off;
 
   @override
   void initState() {
@@ -75,10 +77,10 @@ class _RegisterState extends State<Register> {
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        Text('REGISTER',
+                        Text('Create An Account',
                     textAlign: TextAlign.center,
-                    style: theme.textTheme.headline2!.copyWith(fontSize: 40)),
-                          SizedBox(height:20),
+                    style: theme.textTheme.headline2),
+                          SizedBox(height:30),
                         CustomTextField(
                           controller: _emailController,
                           hintText: 'Enter email',
@@ -94,6 +96,24 @@ class _RegisterState extends State<Register> {
                           hintText: 'Password',
                           color: Colors.white,
                           style: theme.textTheme.bodyText1,
+                          suffixIcon: GestureDetector(
+                              onTap: () {
+                                setState(() {
+                                  _obsure = !_obsure;
+                                  if (!_obsure) {
+                                    _visibility = Icons.visibility;
+                                  } else {
+                                    _visibility = Icons.visibility_off;
+                                  }
+                                });
+                              },
+                              child: Container(
+                                // alignment: Alignment(1.0,50.0),
+                                padding: EdgeInsets.only(right: 10),
+                                child: Icon(_visibility,
+                                    size: 25, color: Colors.grey),
+                              ),
+                            ),
                         ),
                         SizedBox(height: 10),
                         Row(children: [

@@ -130,6 +130,7 @@ class CustomTextField extends StatelessWidget {
   final Color color;
   final TextStyle? style;
   final bool obscure;
+  final Widget? suffixIcon;
   const CustomTextField(
       {Key? key,
       this.hintText,
@@ -138,8 +139,8 @@ class CustomTextField extends StatelessWidget {
       this.maxLines,
       this.borderColor = Colors.transparent,
       this.color = Colors.transparent,
-      this.style, this.obscure = false
-      })
+      this.style,
+      this.obscure = false, this.suffixIcon})
       : super(key: key);
 
   @override
@@ -156,12 +157,14 @@ class CustomTextField extends StatelessWidget {
       child: TextFormField(
         obscureText: obscure,
         maxLines: maxLines,
+       
         keyboardType: keyboard,
         controller: controller,
         textAlign: TextAlign.justify,
         style: style,
         decoration: InputDecoration(
-          hintText: hintText,
+          hintText: hintText, 
+          suffixIcon:suffixIcon,
           border: InputBorder.none,
           focusedBorder: InputBorder.none,
           enabledBorder: InputBorder.none,
