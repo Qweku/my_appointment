@@ -45,9 +45,39 @@ class _SignInState extends State<SignIn> {
     return WillPopScope(
       onWillPop: () async => _onBackPressed(context),
       child: Scaffold(
+         resizeToAvoidBottomInset:false,
           backgroundColor: theme.primaryColor,
-          body: Stack(
+          body: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment:CrossAxisAlignment.center,
             children: [
+              SizedBox(
+                height: height*0.2,
+                width:width*0.8,
+                child:Column(children: [
+                  Icon(Icons.menu_book,color:theme.primaryColorDark,size:40),
+                  SizedBox(height:height*0.02),
+                  Text('My Appointment',style:theme.textTheme.headline4),
+                   Padding(
+                padding: const EdgeInsets.all(20),
+                child: Row(children: [
+                  Expanded(
+                    child: Divider(
+                      color: Colors.white,
+                    ),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 10),
+                    child: Icon(Icons.edit, color: theme.primaryColorDark),
+                  ),
+                  Expanded(
+                    child: Divider(color: Colors.white),
+                  )
+                ]),
+              ),
+             
+                ],)
+              ),
               Center(
                   child: Container(
                       padding: EdgeInsets.all(20),
@@ -158,11 +188,14 @@ class _SignInState extends State<SignIn> {
                                           _passwordController.text.trim());
                                     }
                                   },
-                                )
+                                ),
                         ],
-                      ))),
+                      )
+                      )
+                      ),
             ],
-          )),
+          ),
+          ),
     );
   }
 

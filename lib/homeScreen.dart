@@ -1,5 +1,7 @@
 // ignore_for_file: file_names, prefer_const_constructors, prefer_const_literals_to_create_immutables, unused_local_variable, void_checks, unused_element
 
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 import 'package:my_appointment/components/cardSlider.dart';
 import 'package:my_appointment/components/categories.dart';
@@ -131,10 +133,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   actions: [
                     TextButton(
                         onPressed: () {
-                          Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                  builder: (context) => SignIn()));
+                          exit(0);
                         },
                         child: Text("Yes")),
                     TextButton(

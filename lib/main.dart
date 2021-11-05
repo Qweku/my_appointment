@@ -47,7 +47,7 @@ class MyApp extends StatelessWidget {
                 debugShowCheckedModeBanner: false,
               ),
             ),
-          ): Loading();
+          ): MaterialApp(debugShowCheckedModeBanner: false,home: Loading());
         });
   }
 }
