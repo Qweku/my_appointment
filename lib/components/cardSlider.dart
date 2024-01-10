@@ -50,16 +50,16 @@ class _CardSliderState extends State<CardSlider> {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
-                          Text('Dr.', style: theme.textTheme.bodyText2),
+                          Text('Dr.', style: theme.textTheme.bodyMedium),
                           Padding(
                             padding: const EdgeInsets.symmetric(vertical: 5),
                             child: SizedBox(
                                 width: width * 0.3,
                                 child: Text('JOHN BENJAMIN',
-                                    style: theme.textTheme.headline4)),
+                                    style: theme.textTheme.headlineMedium)),
                           ),
                           Text('Eye Specialist',
-                              style: theme.textTheme.bodyText2)
+                              style: theme.textTheme.bodyMedium)
                         ],
                       ),
                       Container(

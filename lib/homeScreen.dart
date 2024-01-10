@@ -8,7 +8,6 @@ import 'package:my_appointment/components/categories.dart';
 import 'package:my_appointment/utils.dart/settings.dart';
 import 'package:provider/provider.dart';
 
-import 'auth/sign-in.dart';
 import 'components/appointmentList.dart';
 import 'services/authservices.dart';
 
@@ -64,16 +63,16 @@ class _HomeScreenState extends State<HomeScreen> {
               ListTile(
                   leading: Icon(Icons.list_alt, color: Colors.black),
                   title:
-                      Text('Appointments', style: theme.textTheme.bodyText1)),
+                      Text('Appointments', style: theme.textTheme.bodyLarge)),
               ListTile(
                   leading: Icon(Icons.person, color: Colors.black),
-                  title: Text('Profile', style: theme.textTheme.bodyText1)),
+                  title: Text('Profile', style: theme.textTheme.bodyLarge)),
               ListTile(
                   onTap: () {
                     loginProvider.logout();
                   },
                   leading: Icon(Icons.logout, color: Colors.black),
-                  title: Text('Log out', style: theme.textTheme.bodyText1)),
+                  title: Text('Log out', style: theme.textTheme.bodyLarge)),
             ],
           )),
           body: Stack(

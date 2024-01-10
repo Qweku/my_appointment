@@ -74,7 +74,7 @@ class _RegisterState extends State<Register> {
                 child:Column(children: [
                   Icon(Icons.menu_book,color:theme.primaryColorDark,size:40),
                   SizedBox(height:height*0.02),
-                  Text('My Appointment',style:theme.textTheme.headline4),
+                  Text('My Appointment',style:theme.textTheme.headlineMedium),
                    Padding(
                 padding: const EdgeInsets.all(20),
                 child: Row(children: [
@@ -110,14 +110,14 @@ class _RegisterState extends State<Register> {
                       children: [
                         Text('Create An Account',
                             textAlign: TextAlign.center,
-                            style: theme.textTheme.headline2),
+                            style: theme.textTheme.displayMedium),
                         SizedBox(height: 30),
                         CustomTextField(
                           controller: _emailController,
                           hintText: 'Enter email',
                           color: Colors.white,
                           keyboard: TextInputType.emailAddress,
-                          style: theme.textTheme.bodyText1,
+                          style: theme.textTheme.bodyLarge,
                         ),
                         SizedBox(height: 20),
                         CustomTextField(
@@ -126,7 +126,7 @@ class _RegisterState extends State<Register> {
                           obscure: true,
                           hintText: 'Password',
                           color: Colors.white,
-                          style: theme.textTheme.bodyText1,
+                          style: theme.textTheme.bodyLarge,
                           suffixIcon: GestureDetector(
                             onTap: () {
                               setState(() {
@@ -149,10 +149,10 @@ class _RegisterState extends State<Register> {
                         SizedBox(height: 10),
                         Row(children: [
                           Text("Already have an account? ",
-                              style: theme.textTheme.bodyText2),
+                              style: theme.textTheme.bodyMedium),
                           TextButton(
                               child: Text("Login",
-                                  style: theme.textTheme.bodyText2!
+                                  style: theme.textTheme.bodyMedium!
                                       .copyWith(color: theme.primaryColorDark)),
                               onPressed: () => widget.toggleScreen!())
                         ]),
@@ -171,7 +171,7 @@ class _RegisterState extends State<Register> {
                                                 backgroundColor:
                                                     theme.primaryColorDark,
                                                 content: Text('Invalid email',textAlign:TextAlign.center,
-                                                    style: theme.textTheme.bodyText2),
+                                                    style: theme.textTheme.bodyMedium),
                                                 duration:
                                                     Duration(milliseconds: 1500),
                                                      behavior:SnackBarBehavior.floating,
@@ -191,7 +191,7 @@ class _RegisterState extends State<Register> {
                                                     'Password must be at least 4 characters',
                                                     textAlign:TextAlign.center,
                                                     style:
-                                                        theme.textTheme.bodyText2),
+                                                        theme.textTheme.bodyMedium),
                                                 duration:
                                                     Duration(milliseconds: 1500),
                                                      behavior:SnackBarBehavior.floating,

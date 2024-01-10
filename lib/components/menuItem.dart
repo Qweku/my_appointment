@@ -39,7 +39,7 @@ class MenuItem extends StatelessWidget {
             children: [
               Icon(icon, color: Colors.red, size: 30),
               SizedBox(height: 5),
-              Text(categoryName, style: theme.textTheme.bodyText2)
+              Text(categoryName, style: theme.textTheme.bodyMedium)
             ]),
       ),
     );

@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:stacked_themes/stacked_themes.dart';
 
 class Settings extends StatelessWidget {
   const Settings({Key? key}) : super(key: key);
@@ -12,7 +11,7 @@ class Settings extends StatelessWidget {
       appBar: AppBar(
         title: Text(
           'Settings',
-          style: theme.textTheme.headline4,
+          style: theme.textTheme.headlineMedium,
         ),
         backgroundColor: theme.primaryColor,
       ),
@@ -49,14 +48,14 @@ class Settings extends StatelessWidget {
                                   width: 90,
                                   child: Text("Regular-Theme",
                                       textAlign: TextAlign.center,
-                                      style: theme.textTheme.bodyText1),
+                                      style: theme.textTheme.bodyLarge),
                                 ),
                               )
                             ],
                           )),
                     ),
                     onTap: () {
-                      getThemeManager(context).selectThemeAtIndex(0);
+                      // getThemeManager(context).selectThemeAtIndex(0);
                     }),
                 GestureDetector(
                     child: Padding(
@@ -79,14 +78,14 @@ class Settings extends StatelessWidget {
                                   width: 90,
                                   child: Text("Blue-Theme",
                                       textAlign: TextAlign.center,
-                                      style: theme.textTheme.bodyText1),
+                                      style: theme.textTheme.bodyLarge),
                                 ),
                               )
                             ],
                           )),
                     ),
                     onTap: () {
-                      getThemeManager(context).selectThemeAtIndex(1);
+                      // getThemeManager(context).selectThemeAtIndex(1);
                     }),
                  GestureDetector(
                     child: Padding(
@@ -109,14 +108,14 @@ class Settings extends StatelessWidget {
                                   width: 90,
                                   child: Text("Purple-Theme",
                                       textAlign: TextAlign.center,
-                                      style: theme.textTheme.bodyText1),
+                                      style: theme.textTheme.bodyLarge),
                                 ),
                               )
                             ],
                           )),
                     ),
                     onTap: () {
-                      getThemeManager(context).selectThemeAtIndex(2);
+                      // getThemeManager(context).selectThemeAtIndex(2);
                     }),
               ],
             ),

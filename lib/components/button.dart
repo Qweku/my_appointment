@@ -30,7 +30,7 @@ class Button extends StatelessWidget {
         ),
         child: Text(
           buttonText,
-          style: theme.textTheme.button,
+          style: theme.textTheme.labelLarge,
         ),
       ),
     );

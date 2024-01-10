@@ -30,7 +30,7 @@ class CategoryDetailsScreen extends StatelessWidget {
                           padding: EdgeInsets.only(
                               top: height * 0.2, left: 20),
                           child: Text('EYE SPECIALIST',
-                              style: theme.textTheme.headline2!
+                              style: theme.textTheme.displayMedium!
                                   .copyWith(fontWeight: FontWeight.bold)),
                         ))),
                 Expanded(
@@ -47,7 +47,7 @@ class CategoryDetailsScreen extends StatelessWidget {
                                 rate:4.5,
                                 color: theme.primaryColor.withOpacity(0.3),
                                 image:'assets/doctor.png',
-                                textColor: theme.textTheme.bodyText1!.color,
+                                textColor: theme.textTheme.bodyLarge!.color,
                               ),
                             );
                           }),

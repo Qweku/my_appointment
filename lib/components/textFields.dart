@@ -30,12 +30,12 @@ class DateTextField extends StatelessWidget {
             ),
           ),
           child: DateTimeField(
-            style: theme.textTheme.bodyText1,
+            style: theme.textTheme.bodyLarge,
             decoration: InputDecoration(
               hintText: "Date",
               prefixIcon: Icon(Icons.calendar_today, color: Colors.black),
               border: InputBorder.none,
-              hintStyle: theme.textTheme.bodyText1,
+              hintStyle: theme.textTheme.bodyLarge,
               focusedBorder: InputBorder.none,
               enabledBorder: InputBorder.none,
               errorBorder: InputBorder.none,
@@ -87,12 +87,12 @@ class TimeTextField extends StatelessWidget {
             ),
           ),
           child: DateTimeField(
-            style: theme.textTheme.bodyText1,
+            style: theme.textTheme.bodyLarge,
             decoration: InputDecoration(
               hintText: "Time",
               prefixIcon: Icon(Icons.watch, color: Colors.black),
               border: InputBorder.none,
-              hintStyle: theme.textTheme.bodyText1,
+              hintStyle: theme.textTheme.bodyLarge,
               focusedBorder: InputBorder.none,
               enabledBorder: InputBorder.none,
               errorBorder: InputBorder.none,

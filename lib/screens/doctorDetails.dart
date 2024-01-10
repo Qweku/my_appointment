@@ -23,7 +23,7 @@ class _DoctorDetailsState extends State<DoctorDetails> {
               title: Column(
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
-                  Text("BOOK", style: theme.textTheme.headline3),
+                  Text("BOOK", style: theme.textTheme.displaySmall),
                   Padding(
                     padding: const EdgeInsets.all(20),
                     child: Row(children: [
@@ -96,7 +96,7 @@ class _DoctorDetailsState extends State<DoctorDetails> {
                     rate: 4.5,
                     image: 'assets/doctor.png',
                     color: Colors.transparent,
-                    textColor: theme.textTheme.bodyText2!.color),
+                    textColor: theme.textTheme.bodyMedium!.color),
               )),
               Expanded(
                   flex: 2,
@@ -111,45 +111,45 @@ class _DoctorDetailsState extends State<DoctorDetails> {
                               leading: Icon(Icons.local_hospital,
                                   color: theme.primaryColorDark),
                               title: Text('HOSPITAL',
-                                  style: theme.textTheme.bodyText1),
+                                  style: theme.textTheme.bodyLarge),
                               subtitle: Text('BLUE SKY CITY HOSPITAL',
-                                  style: theme.textTheme.headline3!
+                                  style: theme.textTheme.displaySmall!
                                       .copyWith(fontWeight: FontWeight.bold)),
                             ),
                             ListTile(
                               leading: Icon(Icons.place,
                                   color: theme.primaryColorDark),
                               title: Text('LOCATION',
-                                  style: theme.textTheme.bodyText1),
+                                  style: theme.textTheme.bodyLarge),
                               subtitle: Text('NORTH HILL',
-                                  style: theme.textTheme.headline3!
+                                  style: theme.textTheme.displaySmall!
                                       .copyWith(fontWeight: FontWeight.bold)),
                             ),
                             ListTile(
                               leading: Icon(Icons.medical_services,
                                   color: theme.primaryColorDark),
                               title: Text('SPECIALIZATION',
-                                  style: theme.textTheme.bodyText1),
+                                  style: theme.textTheme.bodyLarge),
                               subtitle: Text('EYE SPECIALIST',
-                                  style: theme.textTheme.headline3!
+                                  style: theme.textTheme.displaySmall!
                                       .copyWith(fontWeight: FontWeight.bold)),
                             ),
                             ListTile(
                               leading: Icon(Icons.watch,
                                   color: theme.primaryColorDark),
                               title: Text('WORKING HOURS',
-                                  style: theme.textTheme.bodyText1),
+                                  style: theme.textTheme.bodyLarge),
                               subtitle: Text('8:30 AM - 7:00 PM',
-                                  style: theme.textTheme.headline3!
+                                  style: theme.textTheme.displaySmall!
                                       .copyWith(fontWeight: FontWeight.bold)),
                             ),
                             ListTile(
                               leading: Icon(Icons.phone_iphone,
                                   color: theme.primaryColorDark),
                               title: Text('CONTACT',
-                                  style: theme.textTheme.bodyText1),
+                                  style: theme.textTheme.bodyLarge),
                               subtitle: Text('+233-550875633',
-                                  style: theme.textTheme.headline3!
+                                  style: theme.textTheme.displaySmall!
                                       .copyWith(fontWeight: FontWeight.bold)),
                             ),
                           ],
@@ -182,12 +182,12 @@ class _DoctorDetailsState extends State<DoctorDetails> {
                         children: [
                           Text(
                             '13',
-                            style: theme.textTheme.headline1!
+                            style: theme.textTheme.displayLarge!
                                 .copyWith(color: theme.primaryColor),
                           ),
                           Text(
                             'Patients',
-                            style: theme.textTheme.bodyText1!
+                            style: theme.textTheme.bodyLarge!
                                 .copyWith(fontSize: 12),
                           ),
                         ],
@@ -197,12 +197,12 @@ class _DoctorDetailsState extends State<DoctorDetails> {
                         children: [
                           Text(
                             '4.5',
-                            style: theme.textTheme.headline1!
+                            style: theme.textTheme.displayLarge!
                                 .copyWith(color: theme.primaryColor),
                           ),
                           Text(
                             'Rate',
-                            style: theme.textTheme.bodyText1!
+                            style: theme.textTheme.bodyLarge!
                                 .copyWith(fontSize: 12),
                           ),
                         ],
@@ -212,12 +212,12 @@ class _DoctorDetailsState extends State<DoctorDetails> {
                         children: [
                           Text(
                             '5',
-                            style: theme.textTheme.headline1!
+                            style: theme.textTheme.displayLarge!
                                 .copyWith(color: theme.primaryColor),
                           ),
                           Text(
                             'Experience',
-                            style: theme.textTheme.bodyText1!
+                            style: theme.textTheme.bodyLarge!
                                 .copyWith(fontSize: 12),
                           ),
                         ],

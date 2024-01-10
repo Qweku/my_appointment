@@ -47,7 +47,7 @@ class _AppointmentListState extends State<AppointmentList>
             children: [
               SizedBox(height: height * 0.05),
               Text('Recent Appointments',
-                  style: theme.textTheme.headline4!
+                  style: theme.textTheme.headlineMedium!
                       .copyWith(color: theme.primaryColor)),
               Padding(
                 padding: const EdgeInsets.all(20),
@@ -105,16 +105,16 @@ class _AppointmentListState extends State<AppointmentList>
                                             Image.asset('assets/doctor.png')),
                                     title: Text('Dr. John Doe',
                                         style:
-                                            theme.textTheme.bodyText1!.copyWith(
+                                            theme.textTheme.bodyLarge!.copyWith(
                                           fontSize: 17,
                                         )),
                                     subtitle: Text('Dentist',
-                                        style: theme.textTheme.bodyText1),
+                                        style: theme.textTheme.bodyLarge),
                                     trailing: SizedBox(
                                       width: width * 0.2,
                                       child: Text('2 MONTHS AGO',
                                           textAlign: TextAlign.center,
-                                          style: theme.textTheme.bodyText1!
+                                          style: theme.textTheme.bodyLarge!
                                               .copyWith(color: theme.primaryColorDark)),
                                     )),
                               ),

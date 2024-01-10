@@ -45,17 +45,17 @@ class DoctorCard extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    Text('Dr.', style: theme.textTheme.bodyText1!.copyWith(color:textColor)),
+                    Text('Dr.', style: theme.textTheme.bodyLarge!.copyWith(color:textColor)),
                     Padding(
                       padding: const EdgeInsets.symmetric(vertical: 5),
                       child: SizedBox(
                           width: width * 0.37,
-                          child: Text(name, style: theme.textTheme.headline1!.copyWith(color:textColor))),
+                          child: Text(name, style: theme.textTheme.displayLarge!.copyWith(color:textColor))),
                     ),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.start,
                       children: [
-                        Text("$rate", style: theme.textTheme.bodyText1!.copyWith(color:textColor)),
+                        Text("$rate", style: theme.textTheme.bodyLarge!.copyWith(color:textColor)),
                         SizedBox(width: 5),
                         Icon(Icons.star, color: Colors.amber)
                       ],

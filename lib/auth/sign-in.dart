@@ -1,16 +1,13 @@
 // ignore_for_file: file_names, prefer_const_constructors, prefer_const_literals_to_create_immutables
 
 import 'dart:io';
-import 'dart:math';
 
 import 'package:flutter/material.dart';
 import 'package:my_appointment/components/button.dart';
 import 'package:my_appointment/components/textFields.dart';
-import 'package:my_appointment/homeScreen.dart';
 import 'package:my_appointment/services/authservices.dart';
 import 'package:provider/provider.dart';
 
-import 'authenticate.dart';
 
 class SignIn extends StatefulWidget {
   final Function? toggleScreen;
@@ -57,7 +54,7 @@ class _SignInState extends State<SignIn> {
                 child:Column(children: [
                   Icon(Icons.menu_book,color:theme.primaryColorDark,size:40),
                   SizedBox(height:height*0.02),
-                  Text('My Appointment',style:theme.textTheme.headline4),
+                  Text('My Appointment',style:theme.textTheme.headlineMedium),
                    Padding(
                 padding: const EdgeInsets.all(20),
                 child: Row(children: [
@@ -92,14 +89,14 @@ class _SignInState extends State<SignIn> {
                         children: [
                           Text('Welcome Back',
                               textAlign: TextAlign.center,
-                              style: theme.textTheme.headline2),
+                              style: theme.textTheme.displayMedium),
                           SizedBox(height: 30),
                           CustomTextField(
                             controller: _emailController,
                             hintText: 'Email',
                             color: Colors.white,
                             keyboard: TextInputType.emailAddress,
-                            style: theme.textTheme.bodyText1,
+                            style: theme.textTheme.bodyLarge,
                           ),
                           SizedBox(height: 20),
                           CustomTextField(
@@ -108,7 +105,7 @@ class _SignInState extends State<SignIn> {
                             obscure: _obsure,
                             hintText: 'Password',
                             color: Colors.white,
-                            style: theme.textTheme.bodyText1,
+                            style: theme.textTheme.bodyLarge,
                             suffixIcon: GestureDetector(
                               onTap: () {
                                 setState(() {
@@ -131,10 +128,10 @@ class _SignInState extends State<SignIn> {
                           SizedBox(height: 10),
                           Row(children: [
                             Text("Don't have an account? ",
-                                style: theme.textTheme.bodyText2),
+                                style: theme.textTheme.bodyMedium),
                             TextButton(
                                 child: Text("Register",
-                                    style: theme.textTheme.bodyText2!.copyWith(
+                                    style: theme.textTheme.bodyMedium!.copyWith(
                                         color: theme.primaryColorDark)),
                                 onPressed: () => widget.toggleScreen!())
                           ]),
@@ -153,7 +150,7 @@ class _SignInState extends State<SignIn> {
                                             backgroundColor:
                                                 theme.primaryColorDark,
                                             content: Text('Invalid email',textAlign:TextAlign.center,
-                                                style: theme.textTheme.bodyText2),
+                                                style: theme.textTheme.bodyMedium),
                                             duration:
                                                 Duration(milliseconds: 1500),
                                                  behavior:SnackBarBehavior.floating,
@@ -172,7 +169,7 @@ class _SignInState extends State<SignIn> {
                                             content: Text(
                                                 'Password must be at least 4 characters',textAlign:TextAlign.center,
                                                 style:
-                                                    theme.textTheme.bodyText2),
+                                                    theme.textTheme.bodyMedium),
                                             duration:
                                                 Duration(milliseconds: 1500),
                                                 behavior:SnackBarBehavior.floating,

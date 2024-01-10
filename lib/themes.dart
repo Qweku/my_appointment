@@ -10,19 +10,19 @@ List<ThemeData> getThemes() {
         primaryColorDark: Colors.red,
         cardColor: Color(0xFF212121),
         textTheme: TextTheme(
-            headline1: TextStyle(
+            displayLarge: TextStyle(
                 color: Color(0xFF616161), fontSize: 30, fontFamily: 'Quicksand'),
-            headline2: TextStyle(
+            displayMedium: TextStyle(
                 color: Colors.white, fontSize: 30, fontFamily: 'Quicksand'),
-            headline3: TextStyle(
+            displaySmall: TextStyle(
                 color: Color(0xFF616161), fontSize: 20, fontFamily: 'Quicksand'),
-            headline4: TextStyle(
+            headlineMedium: TextStyle(
                 color: Colors.white, fontSize: 20, fontFamily: 'Quicksand'),
-            bodyText1: TextStyle(
+            bodyLarge: TextStyle(
                 color: Color(0xFF616161), fontSize: 15, fontFamily: 'Quicksand'),
-            bodyText2: TextStyle(
+            bodyMedium: TextStyle(
                 color: Colors.white, fontSize: 15, fontFamily: 'Quicksand'),
-            button: TextStyle(
+            labelLarge: TextStyle(
                 color: Colors.white, fontSize: 20, fontFamily: 'Quicksand')),
         iconTheme: IconThemeData(
           color: Colors.red)),
@@ -32,19 +32,19 @@ List<ThemeData> getThemes() {
         primaryColorDark: Colors.red,
         cardColor: Color(0xFF212121),
         textTheme: TextTheme(
-            headline1: TextStyle(
+            displayLarge: TextStyle(
                 color: Color(0xFF616161), fontSize: 30, fontFamily: 'Quicksand'),
-            headline2: TextStyle(
+            displayMedium: TextStyle(
                 color: Colors.white, fontSize: 30, fontFamily: 'Quicksand'),
-            headline3: TextStyle(
+            displaySmall: TextStyle(
                 color: Color(0xFF616161), fontSize: 20, fontFamily: 'Quicksand'),
-            headline4: TextStyle(
+            headlineMedium: TextStyle(
                 color: Colors.white, fontSize: 20, fontFamily: 'Quicksand'),
-            bodyText1: TextStyle(
+            bodyLarge: TextStyle(
                 color: Color(0xFF616161), fontSize: 15, fontFamily: 'Quicksand'),
-            bodyText2: TextStyle(
+            bodyMedium: TextStyle(
                 color: Colors.white, fontSize: 15, fontFamily: 'Quicksand'),
-            button: TextStyle(
+            labelLarge: TextStyle(
                 color: Colors.white, fontSize: 20, fontFamily: 'Quicksand')),
         iconTheme: IconThemeData(color: Color(0xFF212121))),
     ThemeData(
@@ -53,19 +53,19 @@ List<ThemeData> getThemes() {
         primaryColorDark: Colors.amber,
         cardColor: Color(0xFF212121),
         textTheme: TextTheme(
-            headline1: TextStyle(
+            displayLarge: TextStyle(
                 color: Color(0xFF616161), fontSize: 30, fontFamily: 'Quicksand'),
-            headline2: TextStyle(
+            displayMedium: TextStyle(
                 color: Colors.white, fontSize: 30, fontFamily: 'Quicksand'),
-            headline3: TextStyle(
+            displaySmall: TextStyle(
                 color: Color(0xFF616161), fontSize: 20, fontFamily: 'Quicksand'),
-            headline4: TextStyle(
+            headlineMedium: TextStyle(
                 color: Colors.white, fontSize: 20, fontFamily: 'Quicksand'),
-            bodyText1: TextStyle(
+            bodyLarge: TextStyle(
                 color: Color(0xFF616161), fontSize: 15, fontFamily: 'Quicksand'),
-            bodyText2: TextStyle(
+            bodyMedium: TextStyle(
                 color: Colors.white, fontSize: 15, fontFamily: 'Quicksand'),
-            button: TextStyle(
+            labelLarge: TextStyle(
                 color: Colors.white, fontSize: 20, fontFamily: 'Quicksand')),
         iconTheme: IconThemeData(color: Color(0xFF212121))),
    

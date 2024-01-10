@@ -62,7 +62,7 @@ class _CategoryListState extends State<CategoryList> {
                           children:[
                             Image.asset(_image[index],height:50,width:50),
                             SizedBox(height: 5),
-                            Text(_name[index],style:theme.textTheme.bodyText1)
+                            Text(_name[index],style:theme.textTheme.bodyLarge)
                 
                           ]
                         )
