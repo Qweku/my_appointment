@@ -17,20 +17,16 @@ class _CategoryListState extends State<CategoryList> {
     'assets/tooth.png'
   ];
 
-  List<String> _name = [
-    'Eye Specialist',
-    'Cardiologist',
-    'Dentist'
-  ];
-  
+  List<String> _name = ['Eye Specialist', 'Cardiologist', 'Dentist'];
+
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
     double height = MediaQuery.of(context).size.height;
     double width = MediaQuery.of(context).size.width;
-    
+
     return SizedBox(
-        height: height * 0.18,
+        height: height * 0.15,
         child: ListView.builder(
             scrollDirection: Axis.horizontal,
             itemCount: 3,
@@ -39,34 +35,36 @@ class _CategoryListState extends State<CategoryList> {
                 padding:
                     const EdgeInsets.symmetric(horizontal: 10, vertical: 5),
                 child: GestureDetector(
-                  onTap:(){
+                  onTap: () {
                     Navigator.push(
-            context, MaterialPageRoute(builder: (context) => CategoryDetailsScreen()));
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => CategoryDetailsScreen(
+                                  speciality: _name[index],
+                                  image: _image[index],
+                                )));
                   },
                   child: Container(
-                    height: height * 0.18,
-                    width: width * 0.3,
-                    decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(20),
-                        color: theme.primaryColorLight,
-                        boxShadow: [
-                          BoxShadow(
-                            color: Colors.black12,
-                            offset: Offset(1, 2),
-                            blurRadius: 5,
-                          )
-                        ]),
-                        child:Column(
-                          mainAxisAlignment:MainAxisAlignment.center,
-                          crossAxisAlignment:CrossAxisAlignment.center,
-                          children:[
-                            Image.asset(_image[index],height:50,width:50),
+                      height: height * 0.18,
+                      width: width * 0.3,
+                      decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(20),
+                          color: theme.primaryColorLight,
+                          boxShadow: [
+                            BoxShadow(
+                              color: Colors.black12,
+                              offset: Offset(1, 2),
+                              blurRadius: 5,
+                            )
+                          ]),
+                      child: Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          crossAxisAlignment: CrossAxisAlignment.center,
+                          children: [
+                            Image.asset(_image[index], height: 50, width: 50),
                             SizedBox(height: 5),
-                            Text(_name[index],style:theme.textTheme.bodyLarge)
-                
-                          ]
-                        )
-                  ),
+                            Text(_name[index], style: theme.textTheme.bodyLarge)
+                          ])),
                 ),
               );
             }));

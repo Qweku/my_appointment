@@ -24,25 +24,25 @@ class _CardSliderState extends State<CardSlider> {
     double width = MediaQuery.of(context).size.width;
 
     return Padding(
-      padding: EdgeInsets.only(bottom: height * 0.12, top: 20),
+      padding: EdgeInsets.only(bottom: height * 0.08, top: 20),
       child: 
       CarouselSlider(
            options: CarouselOptions(
                     autoPlay: true,
                     //viewportFraction: 0.4,
-                    //aspectRatio: 1.5,
+                    aspectRatio: 2.3,
                     enlargeCenterPage: true,
                    ),
            items: _image.map((e) => 
           Container(
-                height: height * 0.25,
-                width: width * 0.8,
+                height: height * 0.2,
+                width: width,
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(20),
                   color: theme.primaryColorLight.withOpacity(0.3),
                 ),
                 child: Padding(
-                  padding: const EdgeInsets.all(20),
+                  padding: const EdgeInsets.symmetric(vertical: 20),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: [

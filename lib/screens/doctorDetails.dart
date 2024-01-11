@@ -135,7 +135,7 @@ class _DoctorDetailsState extends State<DoctorDetails> {
                                       .copyWith(fontWeight: FontWeight.bold)),
                             ),
                             ListTile(
-                              leading: Icon(Icons.watch,
+                              leading: Icon(Icons.watch_later_outlined,
                                   color: theme.primaryColorDark),
                               title: Text('WORKING HOURS',
                                   style: theme.textTheme.bodyLarge),

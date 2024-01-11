@@ -16,6 +16,7 @@ class Authenticate extends StatefulWidget {
 
 class _AuthenticateState extends State<Authenticate> {
   bool isToggle = false;
+  
   void toggleScreen() {
     setState(() {
       isToggle = !isToggle;
@@ -45,7 +46,32 @@ class _RegisterState extends State<Register> {
   late TextEditingController _emailController;
   late TextEditingController _passwordController;
   bool _obsure = true;
+  bool isLoading = false;
   IconData _visibility = Icons.visibility_off;
+   void loginError(
+      Exception e,
+    ) {
+      showDialog<void>(
+          context: context,
+          builder: (context) {
+            return AlertDialog(
+              title: const Icon(Icons.cancel,
+                  color: Color.fromARGB(255, 216, 30, 17), size: 50),
+
+              // Text(
+              //   "LOGIN ERROR",textAlign: TextAlign.center,
+              //   style: TextStyle(fontWeight: FontWeight.bold,color:Color.fromARGB(255, 233, 22, 7), fontSize: 18),
+              // ),
+              content: Text("${(e as dynamic).message}"),
+              actions: [
+                TextButton(
+                    onPressed: (() => Navigator.of(context).pop()),
+                    child: const Text("OK"))
+              ],
+            );
+          });
+    }
+
 
   @override
   void initState() {
@@ -157,7 +183,7 @@ class _RegisterState extends State<Register> {
                               onPressed: () => widget.toggleScreen!())
                         ]),
                         SizedBox(height: height * 0.1),
-                        loginProvider.isLoading
+                        isLoading
                             ? CircularProgressIndicator(
                                 color: theme.primaryColorDark)
                             : Button(
@@ -200,9 +226,21 @@ class _RegisterState extends State<Register> {
             
                                           return null;
                                         }  else {
-                                    await loginProvider.register(
+                                    await loginProvider.createUserWithEmailAndPassword(
                                         _emailController.text.trim(),
-                                        _passwordController.text.trim());
+                                        _passwordController.text.trim()).then((user){
+                                          if (user != null) {
+                                        setState(() {
+                                          isLoading = true;
+                                        });
+                                      } else {
+                                        setState(() {
+                                          isLoading = true;
+                                        });
+                                      }
+                                    }).catchError((e) {
+                                      loginError(e);
+                                    });
                                   }
                                 },
                               )

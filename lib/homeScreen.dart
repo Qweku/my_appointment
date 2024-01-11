@@ -69,7 +69,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   title: Text('Profile', style: theme.textTheme.bodyLarge)),
               ListTile(
                   onTap: () {
-                    loginProvider.logout();
+                    loginProvider.signOut();
                   },
                   leading: Icon(Icons.logout, color: Colors.black),
                   title: Text('Log out', style: theme.textTheme.bodyLarge)),
@@ -82,44 +82,47 @@ class _HomeScreenState extends State<HomeScreen> {
                 //color: theme.primaryColorLight.withOpacity(0.7),
               ),
               Column(children: [
-                Expanded(flex: 2, child: CardSlider()),
+                Expanded(child: CardSlider()),
                 Expanded(
                     flex: 2,
                     child: Container(
+                      padding: EdgeInsets.only(top: height*0.05),
                       decoration: BoxDecoration(
                           color: theme.primaryColorLight,
                           borderRadius: BorderRadius.only(
                               topLeft: Radius.circular(20),
                               topRight: Radius.circular(20))),
+                              child:AppointmentList() ,
                     ))
               ]),
-              Visibility(
-                  visible: showList,
-                  child: Container(
-                    height: height,
-                    color: Colors.black.withOpacity(0.3),
-                  )),
-              Positioned(
-                  bottom: 0,
-                  //showList == false ? -height * 0.5 : -height*0.1,
-                  right: 0,
-                  left: 0,
-                  child: AppointmentList(onSwipe: (details) {
-                    if (details.delta.dy > 0) {
-                      setState(() {
-                        showList = false;
-                      });
-                    }
+              // Visibility(
+              //     visible: showList,
+              //     child: Container(
+              //       height: height,
+              //       color: Colors.black.withOpacity(0.3),
+              //     )),
+              // Positioned(
+              //     bottom: 0,
+              //     //showList == false ? -height * 0.5 : -height*0.1,
+              //     right: 0,
+              //     left: 0,
+              //     child: AppointmentList(onSwipe: (details) {
+              //       if (details.delta.dy > 0) {
+              //         setState(() {
+              //           showList = false;
+              //         });
+              //       }
 
-                    if (details.delta.dy < 0) {
-                      setState(() {
-                        showList = true;
-                      });
-                    }
-                  })),
-              Container(alignment: Alignment(0, 0), child: CategoryList()),
+              //       if (details.delta.dy < 0) {
+              //         setState(() {
+              //           showList = true;
+              //         });
+              //       }
+              //     })),
+               Positioned(right: 0,left:0,top:height*0.23, child: CategoryList()),
             ],
-          )),
+          )
+          ),
     );
   }
 

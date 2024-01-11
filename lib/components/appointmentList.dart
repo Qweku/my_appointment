@@ -66,63 +66,67 @@ class _AppointmentListState extends State<AppointmentList>
                   )
                 ]),
               ),
-              Container(
-                  height: height * 0.22,
-                  color: theme.primaryColorLight,
-                  child: ListView.builder(
-                      padding: EdgeInsets.only(bottom: height * 0.05),
-                      itemCount: 4,
-                      itemBuilder: (context, index) {
-                        return Column(
-                          children: [
-                            Padding(
-                              padding:
-                                  const EdgeInsets.symmetric(horizontal: 30),
-                              child: AnimatedContainer(
-                                duration: Duration(milliseconds: 750),
-                                padding: EdgeInsets.symmetric(vertical: 10),
-                                decoration: BoxDecoration(
-                                    color: theme.primaryColorLight,
-                                    borderRadius: BorderRadius.circular(20),
-                                    boxShadow: [
-                                      BoxShadow(
-                                        color: Colors.black12,
-                                        offset: Offset(1, 2),
-                                        blurRadius: 5,
-                                      )
-                                    ]),
-                                child: ListTile(
-                                  //contentPadding: EdgeInsets.all(0),
-                                    leading: Container(
-                                        height: 80,
-                                        width: 60,
-                                        decoration: BoxDecoration(
-                                          //shape: BoxShape.circle,
-                                          borderRadius: BorderRadius.circular(20),
-                                          color: theme.primaryColor.withOpacity(0.4),
-                                        ),
-                                        child:
-                                            Image.asset('assets/doctor.png')),
-                                    title: Text('Dr. John Doe',
-                                        style:
-                                            theme.textTheme.bodyLarge!.copyWith(
-                                          fontSize: 17,
-                                        )),
-                                    subtitle: Text('Dentist',
-                                        style: theme.textTheme.bodyLarge),
-                                    trailing: SizedBox(
-                                      width: width * 0.2,
-                                      child: Text('2 MONTHS AGO',
-                                          textAlign: TextAlign.center,
-                                          style: theme.textTheme.bodyLarge!
-                                              .copyWith(color: theme.primaryColorDark)),
-                                    )),
+              Expanded(
+                child: Container(
+                    
+                    color: theme.primaryColorLight,
+                    child: ListView.builder(
+                      shrinkWrap: true,
+                      physics: BouncingScrollPhysics(),
+                        padding: EdgeInsets.only(bottom: height * 0.05),
+                        itemCount: 4,
+                        itemBuilder: (context, index) {
+                          return Column(
+                            children: [
+                              Padding(
+                                padding:
+                                    const EdgeInsets.symmetric(horizontal: 15),
+                                child: AnimatedContainer(
+                                  duration: Duration(milliseconds: 750),
+                                  padding: EdgeInsets.symmetric(vertical: 10),
+                                  decoration: BoxDecoration(
+                                      color: theme.primaryColorLight,
+                                      borderRadius: BorderRadius.circular(20),
+                                      boxShadow: [
+                                        BoxShadow(
+                                          color: Colors.black12,
+                                          offset: Offset(1, 2),
+                                          blurRadius: 5,
+                                        )
+                                      ]),
+                                  child: ListTile(
+                                    //contentPadding: EdgeInsets.all(0),
+                                      leading: Container(
+                                          height: 80,
+                                          width: 60,
+                                          decoration: BoxDecoration(
+                                            //shape: BoxShape.circle,
+                                            borderRadius: BorderRadius.circular(20),
+                                            color: theme.primaryColor.withOpacity(0.4),
+                                          ),
+                                          child:
+                                              Image.asset('assets/doctor.png')),
+                                      title: Text('Dr. John Doe',
+                                          style:
+                                              theme.textTheme.bodyLarge!.copyWith(
+                                            fontSize: 17,
+                                          )),
+                                      subtitle: Text('Dentist',
+                                          style: theme.textTheme.bodyLarge),
+                                      trailing: SizedBox(
+                                        width: width * 0.2,
+                                        child: Text('2 MONTHS AGO',
+                                            textAlign: TextAlign.center,
+                                            style: theme.textTheme.bodyLarge!
+                                                .copyWith(color: theme.primaryColorDark)),
+                                      )),
+                                ),
                               ),
-                            ),
-                            Divider()
-                          ],
-                        );
-                      })),
+                              Divider()
+                            ],
+                          );
+                        })),
+              ),
             ],
           ),
           // Positioned(

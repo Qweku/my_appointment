@@ -24,9 +24,9 @@ Flutter Appointment App is designed to simplify appointment scheduling and manag
 
 ## Screenshots
 
-| Appointment List | Book Appointment | Profile Screen |
+| Login | Home Screen | Details |
 |------------------|------------------|----------------|
-| ![Appointment List](screenshots/appointment_list.png) | ![Book Appointment](screenshots/book_appointment.png) | ![Profile Screen](screenshots/profile_screen.png) |
+| ![Login](readme/log.jpg) | ![Home Screen](readme/hs.jpg) | ![Details](readme/dets.jpg) |
 
 ## How to Use
 - Register or log in to access the app features.
