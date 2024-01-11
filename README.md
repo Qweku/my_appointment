@@ -42,5 +42,5 @@ Flutter Appointment App is designed to simplify appointment scheduling and manag
 - Other packages as listed in `pubspec.yaml`
 
 ## Authors
-- John Doe - @johndoe
-- Jane Smith - @janesmith
+- [Collins Brobbey Jnr](https://github.com/Qweku)
+- [Jeffrey Boahen](https://github.com/yellow_Flickr)
